@@ -10,7 +10,7 @@ const App = () => {
   return (
     <QueryClientProvider client={new QueryClient()}>
       <Suspense fallback={<RootLoading />}>
-        <BrowserRouter>
+        <BrowserRouter basename={import.meta.env.DEV ? "" : "/movies-vite"}>
           <Routes>
             <Route path="/">
               <Route index Component={Home} />
